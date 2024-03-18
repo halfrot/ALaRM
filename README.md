@@ -50,7 +50,7 @@ accelerate launch --multi_gpu ./long-form-QA/train_ppo.py \
 accelerate launch --multi_gpu ./MT/train_ppo.py \
   --save_dir ./MT/model_ckpts/seed42/hierarchical \
   --sigmoid_shaping --reward_type hierarchical \
-  --w_read 0 --w_grammar 1 --w_confidence 0 --run_name hierarchical
+  --w_read 0 --w_grammar 1 --w_confidence 0 --seed 42 --run_name hierarchical
 ```
 
 ### Evaluation
@@ -68,7 +68,7 @@ accelerate launch --multi_gpu ./long-form-QA/train_ppo.py \
 accelerate launch --multi_gpu ./MT/train_ppo.py \
   --save_dir ./MT/model_generations/seed42/hierarchical.json \
   --sigmoid_shaping --reward_type hierarchical \
-  --w_read 0 --w_grammar 1 --w_confidence 0 --run_name test_hierarchical \
+  --w_read 0 --w_grammar 1 --w_confidence 0 --seed 42 --run_name test_hierarchical \
   --test --policy_ckpt halfrot/sft-mt5-base \
   --batch_size 256
 ```
